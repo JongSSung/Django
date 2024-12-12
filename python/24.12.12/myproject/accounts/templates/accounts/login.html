@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>개씨발</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/login.css' %}"/>
+</head>
+<body>
+    <div class="login-container">
+        <h2>로그인</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">아이디</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">패스워드</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">로그인</button>
+        </form>
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
