@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>사이트 회원가입</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* 로그인 화면과 동일한 배경색 */
+        }
+        .signup-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+        .signup-container h2 {
+            margin: 0 0 20px;
+            color: #333; /* 로그인 화면과 동일한 색상 */
+        }
+        .signup-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666; /* 로그인 화면과 동일한 색상 */
+            text-align: left;
+        }
+        .signup-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9; /* 로그인 화면과 동일한 색상 */
+        }
+        .signup-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4a90e2; /* 로그인 화면과 동일한 파란색 톤 */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .signup-container button:hover {
+            background-color: #357ab8; /* 로그인 화면과 동일한 어두운 파란색 톤 */
+        }
+        .back-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #4a90e2; /* 로그인 화면과 동일한 파란색 톤 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #357ab8; /* 로그인 화면과 동일한 어두운 파란색 톤 */
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back();">이전</button>
+    <div class="signup-container">
+        <h2>회원가입</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">아이디</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password1">패스워드</label>
+            <input type="password" id="password1" name="password1" required>
+            <label for="password2">패스워드 확인</label>
+            <input type="password" id="password2" name="password2" required>
+            <button type="submit">회원가입</button>
+        </form>
+    </div>
+</body>
+</html>

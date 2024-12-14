@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>개씨발</title>
+    <title>사이트 로그인</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'assets/css/login.css' %}"/>
 </head>
@@ -19,6 +19,9 @@
         {% if error %}
             <p class="error-message">{{ error }}</p>
         {% endif %}
+        <div class="signup-link">
+            <p>계정이 아직도없나? <a href="{% url 'signup' %}">회원가입</a></p>
+        </div>
     </div>
 </body>
 </html>
