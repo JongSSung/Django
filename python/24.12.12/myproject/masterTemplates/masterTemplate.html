@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}사이트{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}"/>
+</head>
+<body>
+    <header>
+        <h1>사이트 헤더</h1>
+        <div class="user-info">
+            {% if user.is_authenticated %}
+                {{ user.username }}님
+            {% endif %}
+            <nav class="ml-5">
+                <ul>
+                    <li><a href="{% url 'home' %}">홈</a></li>
+                    <li><a href="{% url 'logout' %}">로그아웃</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <!-- <footer>
+        <p>사이트 푸터</p>
+    </footer> -->
+</body>
+</html>

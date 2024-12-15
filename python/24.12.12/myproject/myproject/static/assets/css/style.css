@@ -1,0 +1,121 @@
+/* 기본 스타일 설정 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header .nav-container {
+    display: flex;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #d1eaff;
+}
+
+/* 사용자 아이디 스타일 */
+.user-info {
+    font-size: 16px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.user-info nav{
+    border: 1px solid white;
+    border-radius: 1dvh;
+}
+
+/* 메인 컨텐츠 스타일 */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container h1 {
+    color: #4a90e2;
+}
+
+.container p {
+    color: #333;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.ml-1{
+    margin-left: 1px;
+}
+.ml-2{
+    margin-left: 2px;
+}
+.ml-3{
+    margin-left: 3px;
+}
+.ml-4{
+    margin-left: 4ch;
+}
+.ml-5{
+    margin-left: 5px;
+}
