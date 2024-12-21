@@ -21,7 +21,6 @@ header {
 }
 
 header h1 {
-    margin: 0;
     font-size: 24px;
 }
 
@@ -36,7 +35,6 @@ header nav {
 }
 
 header nav ul {
-    list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
@@ -64,13 +62,93 @@ header nav ul li a:hover {
     display: flex;
     align-items: center;
     padding-right: 20px;
+    border-right: 1px solid white;
+    margin-right: 20px;
 }
 
-.user-info nav{
-    border: 1px solid white;
-    border-radius: 1dvh;
+/* 메인 메뉴 스타일 */
+.main-menu {
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.main-menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu ul li.dropdown {
+    position: relative;
+    margin-right: 20px;
+}
+
+.gnb-wrap {
+    display: flex;
+    padding:0 8px;
+}
+
+
+.main-menu .gnb-wrap .dropdown-dep1 {
+    position: relative;
+    top:0;
+    left:0;
+    display: flex;
+    margin: 0 8px;
+    max-width: 80px;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    color: #357ab8;
+}
+
+.main-menu .gnb-wrap .dropdown-dep1::after {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: #357ab8;
+    transition-duration: .3s;
+}
+
+.main-menu .gnb-wrap .dropdown-dep1:hover::after{
+    width: 100%;
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* depth2 드롭다운 메뉴 스타일 */
+.dropdown-content-dep2 {
+    position: absolute;
+    top:35px;
+    left:50%;
+    transform: translateX(-50%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 120px;
+    display: none;
+}
+
+.dropdown-content-dep2 li {
+    display: flex;
+    width: 100%;
+    margin: 0 4px;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .3s;
+}
+
+.dropdown-content-dep2 li a {
+    color: #0e62ac;
+    font-weight: 500;
+    padding: 12px 8px;
+}
+
+.dropdown-content-dep2 li:hover {
+    background: rgba(14,98,172,0.5);
+    color: #f3f3f3;
+}
 /* 메인 컨텐츠 스타일 */
 main {
     flex: 1;
@@ -104,18 +182,93 @@ footer {
     width: 100%;
 }
 
-.ml-1{
+.ml-1 {
     margin-left: 1px;
 }
-.ml-2{
+.ml-2 {
     margin-left: 2px;
 }
-.ml-3{
+.ml-3 {
     margin-left: 3px;
 }
-.ml-4{
+.ml-4 {
     margin-left: 4ch;
 }
-.ml-5{
+.ml-5 {
     margin-left: 5px;
 }
+
+/*
+⣿⣿⣿⣿⠿⠿⠿⢿⡿⠿⠿⠿⢿⣿⣿⣿
+⣿⣿⣿⡇ ⣤⣤⣤⡇⠀⣤⣤⣤⣿⣿⣿
+⣿⣿⣿⣇ ⠉⠉⠉⡇⠀⠉⠉⠉⣿⣿⣿
+⣿⣿⣿⠿⠿⠿⠿⠀ ⠿ ⠿⠿⠿⣿⣿⣿
+⣿⣿⣿⣤⣤⣤⠤⠤⠤⠤⢤⣤⣤⣿⣿⣿
+⣿⣿⣿⣿⠉⠀⣤⣤⣤⣤⡀⠈⢻⣿⣿⣿
+⣿⣿⣿⣿⣄⡀⠉⠙⠛⠉⠁⣠⣾⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⡏⠉⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣾⣿⣿⡇⠀⣿⣿⣷⣶⣦⣄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⡿⢿⣿⣿⡇⠀⣿⣿⣿⠿⣿⣿⣶⣿⣿⣦⡄
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠘⣿⣿⡇⠀⣿⣿⡿⠀⣿⣿⣿⠛⣿⣿⣿
+⠀⣠⣶⣶⣶⣦⡀⠀⢸⣿⣿⡇⠀⠈⠁⠀⠀⠉⠋⠁⠀⠙⠛⠋⠀⣿⣿⣿
+⣼⣿⣿⠿⢿⣿⣿⣦⣸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿
+⢿⣿⣿⣄⠀⠙⢿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿
+⠈⠻⣿⣿⣷⡀⠀⠙⢿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿
+⠀⠀⠘⢿⣿⣿⣦⡀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿
+⠀⠀⠀⠀⠹⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿
+⠀⠀⠀⠀⠀⠈⠻⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⡟
+⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⡿⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⡿⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠿⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠿⠿⠇⠀⠀
+*/
+
+
+/*
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⠤⠤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠔⠉⠀⠀⠀⠀⠀⠀⠉⠢⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⢀⣀⡤⣀⡀⠀⠀⠀⢠아이~씻팔!!
+⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⢠⣅⣾⠜⠿⣴⣧⢱⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⠜⠁⠈⠛⡻⠊⠑⢝⠯⠜⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢨⡀⠀⠀⠀⡇⠀⠀⢸⠀⠀⣀⣀⡤⠂⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠑⠢⢤⣤⡬⣔⣒⣁⣰⡿⠋⠹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢞⡄⢀⣜⡽⠋⠀⠀⠀⠑⣄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠿⠞⠋⠀⠀⠀⠀⠀⠀⠀⠉⠑⠂⠄
+
+⠀  ⠀⠀⠀⠀⠀       ⠀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⣿⣿⡿⠟⠙⠛⠛⠁⠀⠈⠙⢿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣼⣿⣿⠀⠀⠊⣉⡙⠆⣤⣞⡉⠃⢸⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
+ ⠀⠀⠀⠀⠀⣻⣿⣿⡆⠀⠀⠈⢁⣠⣈⡛⠁⠀⢸⣿⡟⠀⠀⢀⢀⠀⠀⠀
+⠀ ⠀⠀⠀⢰⣿⣿⣿⣿⠃⠀⠀⠰⣯⣼⣿⣿⠀⠀⠀⢻⣿⣦⡀⡏⠉⠑⡄
+ ⠀⠀⠀⣾⣿⣿⣿⡇⠀⠀⠀⠀⠙⠿⠿⠋⠀⠀⠀⠈⣿⣿⡃⢱⠀⠀⡇⠀⠀
+⠀⠀⠀⢸⣿⣿⣿⣷⠤⣄⣀⣀⣀⠀⠀⠀⠀⢀⡠⠾⠿⠟⢡⠃⠀⠀⡇⠀⠀
+ ⠀⠀⠀⠈⠙⠓⠀⠀⠀⣴⣿⣧⣼⣽⣷⣾⣟⠉⠉⠒⠒⠊⠀⠀⠀⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⣠⠎⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⠜⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣀⡤⠖⠋⠀⠀
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⢷⣷⣣⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⢏⣿⣿⡵⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣠⣮⣷⣿⣿⣿⣿⣷⣄⣄⠀⠀⠀⠀⠈⢞⣿⣿⡵⡀⠀⠀⠀⠀⠀
+ ⠀⠀⡠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣏⢦⣤⡀⠀⠀⠀⠫⣻⣿⣾⢄⠀⠀⠀
+ ⠀⣔⣿⣿⣿⣿⣿⣿⠿⣿⠻⢟⣿⣿⣿⣿⣿⡆⠀⠀⠀⠑⡿⣿⣯⢆⠀⠀
+ ⢰⣸⢿⣻⢟⠃⠉⠉⠀⡠⠤⠸⣸⣿⣿⣿⡳⠁⠀⠀⠀⠀⡨⠺⠿⠇⢓⡄
+ ⠧⠊⠁⠘⣖⣳⠠⣶⣋⡹⠁⠀⠛⣩⢻⠋⠀⠀⠀⠀⠀⢀⠇⠀⠀⠀⠀⢾⠀
+⠀⠀⢠⠂⠁⠓⠒⠊⠀⡠⠤⡀⢠⠀⠚⠀⠀⠀⠀⠀⡠⠊⢀⠤⡤⣔⠩⠼⡀
+⠀⠀⢇⠀⠀⢀⡠⢔⣪⠠⠖⠇⡘⠀⠀⠀⢀⠄⠒⠉⢀⠔⠁⠀⣧⢞⠮⠭⠵⡀
+⠀⠀⠘⠒⠉⣾⣀⣀⠀⣀⣀⠦⠗⠹⠙⠃⠁⠀⡠⠔⡡⠔⠒⠉⡨⢴⢹⣿⣏⡆
+⠀⠀⠀⠀⡸⠉⠀⠀⠁⠀⠀⠀⠀⣇⡠⡄⡶⠯⠔⠈⠀⠀⡠⠊⠀⠀⡿⣿⣿⡇
+⠀⠀⠀⢀⠇⠀⠀⠀⠀⢀⣀⠤⡤⠵⠊⢸⠀⡠⠤⠤⠐⠉⠀⠀⠀⠀⣷⣿⢿⡇
+⠀⠀⢀⠃⠀⢀⣀⣀⣀⣠⣀⣀⣿⠉⠉⠉⠉⠀⠀
+*/

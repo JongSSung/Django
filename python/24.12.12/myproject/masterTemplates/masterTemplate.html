@@ -3,7 +3,9 @@
 <head>
     <title>{% block title %}사이트{% endblock %}</title>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/reset.css' %}"/>
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}"/>
+    <script src="{% static 'js/script.js' %}"></script>
 </head>
 <body>
     <header>
@@ -20,6 +22,39 @@
             </nav>
         </div>
     </header>
+    <!-- gnb navbar -->
+    <nav class="main-menu">
+        <ul class="gnb-wrap">
+            <li class="dropdown-dep1">
+                <a href="#" class="dropdown-toggle_dep1">끼롤링</a>
+                <ul class="dropdown-content-dep2">
+                    <li><a href="#">중분류1</a></li>
+                    <li><a href="#">중분류2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-dep1">
+                <a href="#" class="dropdown-toggle_dep1">끼롤링</a>
+                <ul class="dropdown-content-dep2">
+                    <li><a href="#">중분류1</a></li>
+                    <li><a href="#">중분류2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-dep1">
+                <a href="#" class="dropdown-toggle_dep1">끼롤링</a>
+                <ul class="dropdown-content-dep2">
+                    <li><a href="#">중분류1</a></li>
+                    <li><a href="#">중분류2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-dep1">
+                <a href="#" class="dropdown-toggle_dep1">끼롤링</a>
+                <ul class="dropdown-content-dep2">
+                    <li><a href="#">중분류1</a></li>
+                    <li><a href="#">중분류2</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
     <main>
         {% block content %}
         {% endblock %}
