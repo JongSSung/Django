@@ -4,7 +4,13 @@
 
 {% block content %}
 <div class="container">
-    <h1>ㅎㅇ</h1>
-    <p>웹 검색에 오신 것을 환영합니다.</p>
+    <div class="page-header">
+       <span class="title">웹 검색</span> 
+    </div>
+    <hr>
+    <form method="get">
+        <input class="Search_ipt" type="text" name="q" placeholder="검색어를 입력하세요" value="{{ q }}">
+        <button type="submit" class="btn btn-primary">검색</button>
+    </form>
 </div>
 {% endblock %}
