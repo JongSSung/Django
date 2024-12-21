@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'PGM0100',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,11 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
     #    'DIRS': [BASE_DIR / 'masterTemplates', BASE_DIR / 'myproject/accounts/templates'],
-             'DIRS': [os.path.join(BASE_DIR, 'masterTemplates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'masterTemplates'),
+            os.path.join(BASE_DIR, 'PGM0100', 'templates'),
+            os.path.join(BASE_DIR, 'myproject', 'accounts', 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
