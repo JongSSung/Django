@@ -221,6 +221,16 @@ footer {
     border: 0;
     -webkit-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
+    margin-left: 10px;
+}
+
+.serach_box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+    padding : 5px;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
 }
 
 .Search_ipt{
@@ -236,6 +246,10 @@ footer {
 
 .Search_ipt :focus{
     outline: none;
+}
+
+.Search_Type{
+    margin : 7px;
 }
 
 .ml-1 {

@@ -9,8 +9,22 @@
     </div>
     <hr>
     <form method="get">
-        <input class="Search_ipt" type="text" name="q" placeholder="검색어를 입력하세요" value="{{ q }}">
-        <button type="submit" class="btn btn-primary">검색</button>
+        <div class="serach_box">
+            <input class="Search_ipt" type="text" name="q" placeholder="검색어를 입력하세요" value="{{ q }}">
+            <input class="Search_Type" type="radio" name="search_type" value="naver" checked> 네이버
+            <input class="Search_Type" type="radio" name="search_type" value="google"> 구글
+            <button type="submit" class="btn btn-primary">검색</button>
+        </div>
     </form>
+    {% if results %}
+        <div class="search-results">
+            <h2>검색 결과:</h2>
+            <ul>
+                {% for result in results %}
+                    <li><a href="{{ result.link }}" target="_blank">{{ result.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}
